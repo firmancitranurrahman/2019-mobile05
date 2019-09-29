@@ -1,0 +1,47 @@
+package polinema.ac.id.starterchapter05.activitiies;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
+
+import android.os.Bundle;
+import android.view.View;
+
+import polinema.ac.id.starterchapter05.R;
+import polinema.ac.id.starterchapter05.fragments.DipsFragment;
+import polinema.ac.id.starterchapter05.fragments.HandstandFragment;
+import polinema.ac.id.starterchapter05.fragments.PushupsFragment;
+
+public class ActivityTugas extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_tugas);
+    }
+
+    public void handleClickPushupsFragment(View view) {
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.setCustomAnimations(R.anim.enter_from_left,R.anim.exit_from_left,R.anim.enter_from_left,R.anim.exit_from_right);
+        fragmentTransaction.replace(R.id.dynamic_fragment_placeholder,new PushupsFragment(),"RED_FRAGMENT");
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
+
+
+    public void handleClickDips(View view) {
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.setCustomAnimations(R.anim.enter_from_left,R.anim.exit_from_left,R.anim.enter_from_left,R.anim.exit_from_right);
+        fragmentTransaction.replace(R.id.dynamic_fragment_placeholder,new DipsFragment(),"RED_FRAGMENT");
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
+    public void handleClickHandstand(View view) {
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.setCustomAnimations(R.anim.enter_from_left,R.anim.exit_from_left,R.anim.enter_from_left,R.anim.exit_from_right);
+        fragmentTransaction.replace(R.id.dynamic_fragment_placeholder,new HandstandFragment(),"RED_FRAGMENT");
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+}
